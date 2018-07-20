@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!--/*<script src="/node_modules/angular/angular.js"></script>*/-->
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<script src="app.js"></script>
+<body>
+
+<div class="container">
+<div class="col-md-3 col-md-offset-5">
+
+<div ng-app="myApp" ng-controller="pokeCtrl"> 
+
+<form class="form-horizontal" ng-submit="submitSearch(myForm.$valid)" name="myForm" novalidate>
+
+<div class="form-group">
+   
+   
+  <label>Your favourite number? </label>
+  <input type="text"  class="form-control" ng-model="number" required>
+
+  <label>Your favourite pokemon type? </label>
+  <input type="text"  class="form-control" ng-model="type" required>
+</div>
+
+    <input type="submit" value="Catch it!" class="btn btn-primary btn-success" >
+    <strong><h3>{{ searchHeader }}</h3> </strong> 
+    </br>
+   <img src={{display}}/>
+   </br>
+    <strong><h3>{{ typeName }}</h3> </strong> 
+    </br>
+    <div id="answer">
+    </div>
+   </br>
+    
+</div>
+
+     
+</div>
+</form>
+<!--
+
+<script>
+
+
+var app = angular.module('myApp', []);
+
+app.controller('pokeCtrl', function($scope, $http) {
+
+$scope.submitSearch = function (isValid){
+
+$scope.searchHeader = "";
+
+
+if (isValid){
+$scope.urlsearch = "https://api.pokemontcg.io/v1/cards?types=" + $scope.type;
+	$http.get($scope.urlsearch).then(function (response) {
+      $scope.myData = response.data;
+      $scope.searchHeader = $scope.myData.Name;  
+     
+      
+  });
+}
+else{
+  $scope.display = "Sorry, something went wrong :(";
+}
+};
+});
+</script>
+-->
+
+</div>
+</body>
+</html>

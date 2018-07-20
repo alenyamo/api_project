@@ -1,0 +1,20 @@
+.container {
+    background-color:azure;
+    font-family: 'Raleway', sans-serif;
+    font-size: 25px;
+    align-content: center;
+    border-style: double;
+    border-width: 2px;
+    border-color:blueviolet;
+}
+label {
+    align-content: center;
+}
+
+body {
+    background-image: url(https://data.whicdn.com/images/250455903/large.png)
+}
+
+h3 {
+    font-weight:bold;
+}
